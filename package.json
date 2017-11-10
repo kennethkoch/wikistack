@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kennethkoch/wikistack/issues"
   },
-  "homepage": "https://github.com/kennethkoch/wikistack#readme"
+  "homepage": "https://github.com/kennethkoch/wikistack#readme",
+  "dependencies": {
+    "morgan": "^1.9.0"
+  }
 }
