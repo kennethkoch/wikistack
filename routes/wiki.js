@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const body_parser = require('body-parser')
 
 router.get('/', function(req, res, next) {
   //res.send('got to GET /wiki/');
@@ -11,8 +12,8 @@ router.post('/', function(req, res, next) {
 });
 
 router.get('/add', function(req, res, next) {
-  // res.send('wtf')
   res.render('addpage');
+  console.log(req.body);
 });
 
 
