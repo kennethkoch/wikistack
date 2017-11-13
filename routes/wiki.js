@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const body_parser = require('body-parser')
+// const body_parser = require('body-parser')
 
 router.get('/', function(req, res, next) {
   //res.send('got to GET /wiki/');
@@ -8,13 +8,16 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+  res.json(req.body); 
   res.send('got to POST /wiki/');
+  
 });
 
 router.get('/add', function(req, res, next) {
   res.render('addpage');
-  console.log(req.body);
+  
 });
 
+//router.use(body_parser.json());
 
 module.exports = {router:router}
