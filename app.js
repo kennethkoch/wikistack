@@ -9,10 +9,8 @@ const models = require('./models/index')
 
 app.use(express.static('public'));
 
-// console.log(db);
 models.db.sync({force: true})
 .then(function () {
-    // make sure to replace the name below with your express app
     app.listen(3000, function () {
         console.log('Server is listening on port 3000!');
     });
