@@ -5,9 +5,13 @@ const nunjucks = require('nunjucks');
 const body_parser = require('body-parser');
 const morgan = require('morgan');
 const PORT = 3000;
-const models = require('./models/index')
+const models = require('./models/index');
+const routes = require('./routes/index')
+
+// router.test();
 
 app.use(express.static('public'));
+app.use('/wiki', routes.wikiRouter);
 
 models.db.sync({force: true})
 .then(function () {

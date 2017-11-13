@@ -7,21 +7,25 @@ var db = new Sequelize('postgres://localhost:5432/wikistack', {
 
 
 var Page = db.define('page', {
-  title: { 
+  title: {
     type: Sequelize.STRING, allowNull:false
   },
   urlTitle: {
-    type: Sequelize.TEXT, 
-    allowNull:false, 
+    type: Sequelize.TEXT,
+    allowNull:false,
     validate: {
       isURL:true
     }
+    // get () {
+    //   const route = '/wiki/' + this.getDataValue('urlTitle');
+    //   return route;
+    // }
   },
   content: {
     type: Sequelize.TEXT,
      allowNull: false
     },
-  status:{ 
+  status:{
     type: Sequelize.BOOLEAN
   },
   date: {
