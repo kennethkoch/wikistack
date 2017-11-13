@@ -5,7 +5,7 @@ const express = require('express');
 var Page = db.define('page', {
     title: {
       type: Sequelize.STRING
-    }
+    },
     urlTitle: Sequelize.TEXT,
     content: Sequelize.TEXT,
     status: Sequelize.BOOLEAN
