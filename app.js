@@ -9,6 +9,9 @@ const models = require('./models/index');
 const routes = require('./routes/index')
 
 // router.test();
+app.get("/", (req,res)=>{
+    res.render('index');
+  })
 
 app.use(express.static('public'));
 app.use('/wiki', routes.wikiRouter);

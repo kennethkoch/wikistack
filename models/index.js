@@ -15,11 +15,11 @@ var Page = db.define('page', {
     allowNull:false,
     validate: {
       isURL:true
+    },
+    get () {
+      const route = '/wiki/' + this.getDataValue('urlTitle');
+      return route;
     }
-    // get () {
-    //   const route = '/wiki/' + this.getDataValue('urlTitle');
-    //   return route;
-    // }
   },
   content: {
     type: Sequelize.TEXT,
